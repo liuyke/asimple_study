@@ -5,7 +5,8 @@ import java.util.Random;
 
 /**
  * 3路快排
- *
+ * 数组按以下规则拆分
+ *  l --- lt --- gt --- r
  * @author liuyk
  */
 public class QuickSort3 {

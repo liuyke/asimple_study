@@ -1,11 +1,11 @@
 package com.liuyk.asimple.leetcode;
 
 /**
- * 链表成对翻转
- * 输入：1 -> 2 -> 3 -> 4
- * 输出：2 -> 1 -> 4 -> 3
+ * 链表翻转
+ * 1 -> 2 -> 3
+ * 3 -> 2 -> 1
  */
-public class LinkNodeSwapPair<T> {
+public class LinkReverse {
 
     static class Node<T> {
         Node<T> next;
@@ -26,29 +26,37 @@ public class LinkNodeSwapPair<T> {
         }
     }
 
-    public static <T> Node<T> swapPairs(Node<T> head) {
+    // 1 -> 2 -> 3
+
+    public static <T> Node<T> reverse(Node<T> head) {
         if (head == null || head.next == null) {
             return head;
         }
 
-        Node<T> next = head.next;
-        head.next = swapPairs(next.next);
-        next.next = head;
-
-        return next;
+        Node<T> pre = null;
+        Node<T> cur = head;
+        while (cur != null) {
+            Node<T> temp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = temp;
+        }
+        return pre;
     }
 
     public static void main(String[] args) {
-        Node<Integer> node0 = new Node<>(0);
-        final Node<Integer> head = node0;
-        for (int i = 1; i < 30; i++) {
-            Node<Integer> node1 = new Node<>(i);
+        LinkReverse.Node<Integer> node0 = new LinkReverse.Node<>(0);
+        final LinkReverse.Node<Integer> head = node0;
+        for (int i = 1; i < 5; i++) {
+            LinkReverse.Node<Integer> node1 = new LinkReverse.Node<>(i);
             node0.next = node1;
             node0 = node1;
         }
 
         System.out.println(head);
-        System.out.println(swapPairs(head));
+        System.out.println(LinkReverse.reverse(head));
     }
+
+
 
 }

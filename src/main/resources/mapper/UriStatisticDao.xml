@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liuyk.asimple.dao.UriStatisticDao" >
+
+  <insert id="batchAdd">
+    insert into uri_statistic_${index}(oa_id, account, ctime, hour, minutes, day, url) values
+    <foreach collection="uriStatisticList" item="u" separator=",">
+      (
+       #{u.oaId}, #{u.account}, #{u.ctime}, #{u.hour}, #{u.minutes}, #{u.day}, #{u.url}
+      )
+    </foreach>
+  </insert>
+
+</mapper>

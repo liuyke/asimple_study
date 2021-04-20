@@ -28,7 +28,7 @@ public class AccessInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String traceId = request.getHeader(TRACE_ID);
-        RequestHolder.setTraceId(StringUtils.isEmpty(traceId) ? "" : traceId);
+        RequestHolder.setTraceId(StringUtils.hasText(traceId) ? "" : traceId);
 
         String version = request.getHeader(VERSION);
         RequestHolder.setVersion(Objects.isNull(version) ? -1 : Integer.parseInt(version.trim()));

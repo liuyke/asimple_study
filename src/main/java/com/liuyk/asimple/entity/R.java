@@ -2,7 +2,9 @@ package com.liuyk.asimple.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public class R<T> {
+import java.io.Serializable;
+
+public class R<T> implements Serializable {
 
     private transient static final int CODE_SUCCESS = 1000;
 

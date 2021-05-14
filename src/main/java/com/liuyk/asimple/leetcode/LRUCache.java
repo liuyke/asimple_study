@@ -111,18 +111,6 @@ public class LRUCache<K, V> {
         cache.get(1);
         cache.put(6,6);
         System.out.println(cache);
-
-        List<String> strings = Arrays.asList("D354", "D42", "D88", "D127", "D129", "D164",
-                "D189", "D217", "D276", "D289", "D395", "D547", "D701", "D1122", "D1189", "D1322", "D1353",
-                "D1374", "D1375", "D1596", "D46", "D462", "D1533", "D1612", "D1613");
-
-        System.out.println(StringUtils.join(strings, ","));
-
-        String str = "{\"D354\",\"D42\",\"D88\",\"D127\",\"D129\",\"D164\",\"D189\",\"D217\",\"D276\",\"D289\",\"D395\",\"D547\",\"D701\",\"D1122\",\"D1189\",\"D1322\",\"D1353\",\"D1374\",\"D1375\",\"D1596\",\"D46\",\"D462\",\"D1533\", \"D1612\", \"D1613\",\"D1831\"}";
-        for (String s : str.split(",")) {
-            System.out.println(s);
-        }
-
     }
 
 }

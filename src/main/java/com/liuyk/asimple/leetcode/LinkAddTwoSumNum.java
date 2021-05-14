@@ -1,6 +1,5 @@
 package com.liuyk.asimple.leetcode;
 
-import java.util.List;
 
 public class LinkAddTwoSumNum {
 
@@ -48,6 +47,15 @@ public class LinkAddTwoSumNum {
         }
 
         return dummyHead.next;
+    }
+
+    public static void main(String[] args) {
+        ListNode l1 = new ListNode(0);
+        ListNode l2 = new ListNode(2);
+        l1.next = l2;
+
+        ListNode listNode = new LinkAddTwoSumNum().addTwoNumbers(l1, l2);
+        System.out.println(listNode);
     }
 
 }

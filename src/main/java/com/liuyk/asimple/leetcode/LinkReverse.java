@@ -44,6 +44,23 @@ public class LinkReverse {
         return pre;
     }
 
+
+    public Node reverseNode(Node head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        Node pre=null;
+        Node cur=head;
+        while (cur != null) {
+            Node temp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = temp;
+        }
+        return pre;
+    }
+
     public static void main(String[] args) {
         LinkReverse.Node<Integer> node0 = new LinkReverse.Node<>(0);
         final LinkReverse.Node<Integer> head = node0;
